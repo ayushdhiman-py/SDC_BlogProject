@@ -32,6 +32,7 @@ export default function Login() {
           className="loginInput"
           placeholder="Enter your username..."
           ref={userRef}
+          style={{color:'white'}}
         />
         <label>Password</label>
         <input
@@ -39,16 +40,17 @@ export default function Login() {
           className="loginInput"
           placeholder="Enter your password..."
           ref={passwordRef}
+          style={{color:'white'}}
         />
         <button className="loginButton" type="submit" disabled={isFetching}>
           Login
         </button>
+        <button className="loginRegisterButton">
+          <Link className="link" to="/register">
+            Register
+          </Link>
+        </button>
       </form>
-      <button className="loginRegisterButton">
-        <Link className="link" to="/register">
-          Register
-        </Link>
-      </button>
     </div>
   );
 }
