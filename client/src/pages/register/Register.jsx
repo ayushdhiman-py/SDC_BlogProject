@@ -35,21 +35,24 @@ export default function Register() {
           className="registerInput"
           placeholder="Enter your username..."
           onChange={(e) => setUsername(e.target.value)}
-        />
+          style={{width:'100%'}}
+          />
         <label>Email</label>
         <input
           type="text"
           className="registerInput"
           placeholder="Enter your email..."
           onChange={(e) => setEmail(e.target.value)}
-        />
+          style={{width:'100%'}}
+          />
         <label>Password</label>
         <input
           type="text"
           className="registerInput"
           placeholder="Enter your password..."
           onChange={(e) => setPassword(e.target.value)}
-        />
+          style={{width:'100%'}}
+          />
         <button className="registerButton" type="submit">
           Register
         </button>
