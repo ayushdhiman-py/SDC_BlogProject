@@ -3,12 +3,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 64vh;
   background: linear-gradient(
       rgba(128, 212, 248, 0.5),
       rgba(244, 241, 241, 0.5)
     ),
     url("https://images.pexels.com/photos/768473/pexels-photo-768473.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
   background-size: cover;
+  background-position: center;
+  background-repeat:no-repeat ;
   padding-top: 100px;
   padding-bottom: 100px;
 }

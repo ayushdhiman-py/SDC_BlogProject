@@ -7,7 +7,7 @@ import "./login.css";
 export default function Login() {
   const userRef = useRef();
   const passwordRef = useRef();
-  const { user, dispatch, isFetching } = useContext(Context);
+  const { user, dispatch, isFetching, error } = useContext(Context);
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
@@ -21,7 +21,7 @@ export default function Login() {
       dispatch({ type: "LOGIN_FAILURE" });
     }
   };
-  console.log(user)
+
   return (
     <div className="login">
       <span className="loginTitle">Login</span>
@@ -32,7 +32,7 @@ export default function Login() {
           className="loginInput"
           placeholder="Enter your username..."
           ref={userRef}
-          style={{color:'white'}}
+          style={{ color: "white" }}
         />
         <label>Password</label>
         <input
@@ -40,8 +40,15 @@ export default function Login() {
           className="loginInput"
           placeholder="Enter your password..."
           ref={passwordRef}
-          style={{color:'white'}}
+          style={{ color: "white" }}
         />
+        {error ? (
+          <div style={{ marginTop: 5 }}>
+            <em style={{ color: "red", fontWeight: "bold" }}>
+              Please Check the Details Again !
+            </em>
+          </div>
+        ) : null}
         <button className="loginButton" type="submit" disabled={isFetching}>
           Login
         </button>

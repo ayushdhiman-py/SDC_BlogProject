@@ -12,7 +12,7 @@ export default function Settings() {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images/"
+  const PF = "http://localhost:5000/images/";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,13 +46,15 @@ export default function Settings() {
       <div className="settingsWrapper">
         <div className="settingsTitle">
           <span className="settingsUpdateTitle">Update Your Account</span>
-          <span className="settingsDeleteTitle">**Enter Full Details to get it updated</span>
+          <span className="settingsDeleteTitle">
+            **Enter Full Details to get it updated
+          </span>
         </div>
         <form className="settingsForm" onSubmit={handleSubmit}>
           <label className="pp">Profile Picture</label>
           <div className="settingsPP">
             <img
-              src={file ? URL.createObjectURL(file) : PF+user.profilePic}
+              src={file ? URL.createObjectURL(file) : PF + user.profilePic}
               alt=""
             />
             <label htmlFor="fileInput">
@@ -64,23 +66,23 @@ export default function Settings() {
               style={{ display: "none" }}
               onChange={(e) => setFile(e.target.files[0])}
             />
-
           </div>
           <label>Username</label>
           <input
             type="text"
-            placeholder={user.username}
+            placeholder={"Enter your Username"}
             onChange={(e) => setUsername(e.target.value)}
           />
           <label>Email</label>
           <input
             type="email"
-            placeholder={user.email}
+            placeholder={"Enter your email"}
             onChange={(e) => setEmail(e.target.value)}
-            />
+          />
           <label>Password</label>
           <input
             type="text"
+            placeholder="Enter your password"
             onChange={(e) => setPassword(e.target.value)}
           />
           <button className="settingsSubmit" type="submit">
